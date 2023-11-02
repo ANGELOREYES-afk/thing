@@ -1,25 +1,26 @@
+#include <corecrt_malloc.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "graph_adj_math.h"
+#include "graph_adj_mat.cpp"
 
-struct Igraph{
+struct mygraph{
    int numnodes;
    bool **edges;
+};
 
-}
 graph *create_graph(int numnodes){
-    graph *g  = malloc(sizeof(*g));//wtv g points to
+    graph *g  = static_cast<graph*>(malloc(sizeof(*g)));//wtv g points to
 
     if(g == NULL){return NULL;}
     g->numnodes = numnodes;
-    g->edges = calloc(sizeof(bool*), g->numnodes)
+    g->edges = static_cast<bool**>(malloc(g->numnodes));
 
-    if(g->edges = NULL){
+    if(g->edges == NULL){
         return NULL;
     }
     for(int i =0; i < numnodes; i++){
-        g->edges[i] = calloc(sizeof(bool), g->numnodes);
+        g->edges[i] = static_cast<bool*>(malloc(g->numnodes));
         if(g->edges[i] == NULL){
             destroy_graph(g);
             return NULL;

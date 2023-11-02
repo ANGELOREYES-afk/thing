@@ -1,13 +1,14 @@
 #include <iostream> 
+#include <vector>
 using namespace std;
  
 class Grid {
 #define M
     public: 
         //plan
-        int mygoals[4][4];
+        int *mygoals[4][4];
         
-        vector<int> boxside(4);
+        vector<int> boxside = static_cast<vector<int>**>(malloc(*mygoals)));
         //do djkin... in which we go to each block in a straight line 
         // towards middle of that block but if any walls in the 
         //way we could have current inertia of the bot and its position
@@ -28,12 +29,10 @@ class Grid {
             
         };
         
-        //DJikstra's algorithm
-
-        
-        template bias{
+        //DJikstra's algorithm 
+        // template bias{
             
-        }
+        // }
         struct Points{
             Points* next; 
             pair<vector<int>, bool> data; 

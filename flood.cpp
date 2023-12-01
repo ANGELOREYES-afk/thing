@@ -15,7 +15,7 @@ class Grid {
         //x on its current block and y on its current block aswell
         // make it so that it is on the next recurring block that 
         //closer to the target 
-
+        //pppoooppooo ppeeeepeepee
         //2nd method 
         //we could go from target and find a block near it which it 
         // can show a open space to the target point(like a ray) 
